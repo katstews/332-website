@@ -11,5 +11,5 @@ The first php file I have is called config.php, that is basically a connection f
 
 <img width="585" alt="Screenshot 2023-05-10 at 7 21 18 PM" src="https://github.com/katstews/332-website/assets/112781868/b303a745-0f4d-4f26-af77-daa8479e7716">
 
-Anyways, have fun playing around. Hope this was kinda clear. 
+Anyways, have fun playing around. Hope this was kinda clear. BTW, nothing will show because the database is EMPTYYY. If you want to create your own database, go ahead, but nothing will show up if you try to input any data. 
 
