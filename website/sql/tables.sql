@@ -10,12 +10,13 @@ CREATE TABLE student (
 	FOREIGN KEY(minor) REFERENCES department(d_id)
  );
  
+ -- this was to add foreign keys after initializing the table ------------------
  ALTER TABLE student 
  ADD COLUMN minor INT;
  ALTER TABLE student
  ADD CONSTRAINT fk_minor 
  FOREIGN KEY (minor) REFERENCES department (d_id);
-
+-- this was to add foreign keys after initializing the table ------------------
 
 CREATE TABLE professor (
      p_ssn INT PRIMARY KEY,
@@ -33,12 +34,14 @@ CREATE TABLE professor (
   	 FOREIGN KEY(department) REFERENCES department(d_id)
 ); 
 
-ALTER TABLE professor 
-ADD COLUMN d_id INT;
+-- this was to add foreign keys after initializing the table ------------------
+ ALTER TABLE professor 
+ ADD COLUMN d_id INT;
 
  ALTER TABLE professor 
  ADD CONSTRAINT fk_department 
  FOREIGN KEY(department) REFERENCES department(d_id);
+-- this was to add foreign keys after initializing the table ------------------
 
 CREATE TABLE department (
  	d_id INT,
@@ -50,12 +53,13 @@ CREATE TABLE department (
  	FOREIGN KEY(chair_person) REFERENCES professor(p_ssn)
 );
 
+-- this was to add foreign keys after initializing the table ------------------
 ALTER TABLE department 
 ADD COLUMN chair_person INT;
 ALTER TABLE department  
 ADD CONSTRAINT fk_chair_person
 FOREIGN KEY(chair_person) REFERENCES professor(p_ssn);
-
+-- this was to add foreign keys after initializing the table ------------------
 
 CREATE TABLE course (
  	c_id INT,
@@ -68,13 +72,14 @@ CREATE TABLE course (
      FOREIGN KEY(dept_id) REFERENCES department(d_id)
 );
 
-ALTER TABLE course 
-ADD COLUMN department INT;
+-- this was to add foreign keys after initializing the table ------------------
+ ALTER TABLE course 
+ ADD COLUMN department INT;
 
  ALTER TABLE course  
  ADD CONSTRAINT fk_dept_id
  FOREIGN KEY(dept_id) REFERENCES department(d_id);
-
+-- this was to add foreign keys after initializing the table ------------------
 
 CREATE TABLE section (
  	s_id INT,
@@ -90,11 +95,13 @@ CREATE TABLE section (
      FOREIGN KEY(professor) REFERENCES professor(p_ssn)
 ); 
 
+-- this was to add foreign keys after initializing the table ------------------
 ALTER TABLE section 
 ADD COLUMN course INT;
 ALTER TABLE section
 ADD CONSTRAINT fk_course
 FOREIGN KEY(course) REFERENCES course(c_id);
+-- this was to add foreign keys after initializing the table ------------------
 
 CREATE TABLE enrollment_records (
  	grade VARCHAR(2),
@@ -106,13 +113,11 @@ CREATE TABLE enrollment_records (
 	FOREIGN KEY(course) REFERENCES course(c_id)
 );
 
+-- this was to add foreign keys after initializing the table ------------------
 ALTER TABLE enrollment_records 
 ADD COLUMN  course_id INT;
 
 ALTER TABLE enrollment_records
 ADD CONSTRAINT fk_course_id
 FOREIGN KEY(course_id) REFERENCES course(c_id);
-
-
-
-
+-- this was to add foreign keys after initializing the table ------------------

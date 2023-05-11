@@ -1,8 +1,8 @@
 <?php
-    $servername = 'localhost';
-    $username = 'root';
+    $servername = 'example servername';
+    $username = 'example name';
     $password = '';
-    $dbname = 'school';
+    $dbname = 'example database';
 
     $link = mysqli_connect($servername,$username,$password,$dbname);
     if ($link->connect_error) {
